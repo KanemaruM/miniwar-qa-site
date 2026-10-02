@@ -1,35 +1,24 @@
-# Mini War Discord QA Knowledge Base
+# Temporary Static Pages
 
-DiscordのQAログ・一般チャットログから抽出した、Roblox Mini War向けの静的ナレッジベースです。
+短期間だけ共有・確認するための静的ページ置き場です。
 
-## 内容
+## 用途
 
-- 質問カテゴリごとの推定件数
-- 主要な回答
-- その他意見・曖昧な点
-- 質問が増えた日付
-- 原文例
-- 検索・グループ・回答確度フィルタ
+- 調査結果の一時共有
+- 写真付きランキング・比較ページ
+- イベント候補や撮影スポットのまとめ
+- 1〜2日程度で不要になる確認用HTML
 
-## ローカル確認
+## 運用
 
-ブラウザで `index.html` を開けば動きます。ローカルのfetch制限が出る場合は、以下のように簡易サーバーで確認してください。
+- 公開物は基本的にフォルダ単位で追加します。
+- 例: `card-market/index.html`
+- 公開URL: `https://kanemarum.github.io/<repository-name>/card-market/`
+- 用途が終わったページは削除します。
+- 個人情報・認証情報・非公開データは置きません。
 
-```bash
-python -m http.server 8000
-```
+## GitHub Pages
 
-その後 `http://localhost:8000` を開きます。
+`.github/workflows/pages.yml` により `main` の内容をGitHub Pagesへ公開します。
 
-## GitHub Pagesで公開する方法
-
-1. 新しいGitHubリポジトリを作成
-2. このフォルダの中身をすべてpush
-3. GitHubの Settings → Pages → Build and deployment で `GitHub Actions` を選択
-4. `.github/workflows/pages.yml` が自動で公開します
-
-## 注意
-
-- 件数はログからのルールベース抽出のため概算です。
-- 「回答確度: 低」の項目は、ログ内で回答が割れている、画像依存、またはアップデート直後で情報が荒いものです。
-- Discordユーザー名は公開向けに基本表示していません。
+このリポジトリは長期保管用ではなく、短期的な公開・確認用です。
