@@ -1,0 +1,69 @@
+
+:root{
+  color-scheme:light;
+  --paper:#f8f9f7;--ink:#262b9f;--body:#26282a;--muted:#666a70;--rule:#d0d2d1;
+  --mincho:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif;
+  --ui:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif
+}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{background:var(--paper);margin:0;color:var(--body);font-family:var(--ui);-webkit-font-smoothing:antialiased}
+button,a{font:inherit;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+a{color:inherit;text-decoration:none}
+button{background:transparent;color:inherit;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
+a:hover,button:hover{color:var(--ink)}
+.masthead{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+.artist{font-weight:500;font-size:16px;letter-spacing:.18em;line-height:1.8}
+.roman{font-family:Georgia,serif;color:var(--muted);font-size:11px;letter-spacing:.17em;margin-top:1px}
+.serie{color:var(--muted);font-family:var(--mincho);font-size:12px;line-height:1.8;text-align:right;letter-spacing:.08em}
+.serie strong{display:block;color:var(--ink);font:normal 19px Georgia,serif;letter-spacing:0}
+.page{min-height:100svh;display:grid;grid-template-rows:auto minmax(360px,1fr) auto;padding:32px clamp(21px,4vw,58px) 22px}
+.art-stage{height:calc(100svh - 216px);min-height:360px;position:relative;isolation:isolate;overflow:hidden;touch-action:pan-y}
+.art-stage .quote{font:500 clamp(20px,3.1vw,52px)/2 var(--mincho);color:var(--ink);letter-spacing:.13em;text-align:center;margin:0;position:absolute;inset:0;display:grid;place-items:center;padding:18px 28px}
+.letter-field{visibility:hidden;position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.letter{position:absolute;top:0;left:0;display:grid;place-items:center;font-family:var(--mincho);font-weight:500;color:var(--ink);line-height:1;will-change:transform;transform-origin:50% 50%;white-space:pre}
+.motion-ready .quote{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden;padding:0;margin:-1px;white-space:nowrap}
+.motion-ready .letter-field{visibility:visible}
+.footer{border-top:1px solid var(--rule);padding-top:16px;display:grid;grid-template-columns:1fr auto;align-items:start;column-gap:24px;row-gap:16px}
+.work-title{font:500 13px/1.9 var(--mincho);letter-spacing:.03em}
+.work-title p{margin:0}
+.work-title small{display:block;color:var(--muted);font:12px/1.8 var(--ui)}
+.controls{display:flex;gap:16px;justify-content:flex-end;align-items:center;flex-wrap:wrap}
+.text-button{border:0;background:none;padding:10px 0;min-height:44px;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:7px;font-size:13px;line-height:1.6;letter-spacing:.02em;white-space:nowrap}
+.text-button[aria-pressed=true]{color:var(--ink);text-decoration-color:var(--ink)}
+.details{grid-column:1/-1;color:var(--muted);font:12px/1.9 var(--ui)}
+.details summary{cursor:pointer;width:max-content;max-width:100%;padding:6px 0}
+.details a{text-decoration:underline;text-underline-offset:3px}
+.details p{margin:8px 0;max-width:680px}
+.bottom-nav{grid-column:1/-1;display:flex;justify-content:space-between;gap:12px;color:var(--ink);font:12px/1.7 var(--ui)}
+.bottom-nav a{padding:9px 0}
+.stage-signature{position:absolute;bottom:15px;left:16px;color:var(--muted);font:11px var(--ui);letter-spacing:.13em}
+body[data-engine=fire] .art-stage{transition:background-color .15s linear}
+body[data-engine=fire] .letter{transition:color .12s linear}
+.reduced{font:12px/1.5 var(--ui);color:var(--muted)}
+@media(min-width:900px){
+ .page{padding-top:40px;padding-bottom:26px}
+ .art-stage{height:calc(100svh - 232px)}
+}
+@media(max-width:700px){
+ .page{padding:21px 23px 15px;grid-template-rows:auto minmax(360px,1fr) auto}
+ .art-stage{height:calc(100svh - 286px);min-height:360px}
+ .art-stage .quote{writing-mode:vertical-rl;letter-spacing:.17em;font-size:25px;line-height:1.5}
+ .footer{gap:10px 13px}
+ .work-title{font-size:12px;max-width:195px}
+ .work-title small{font-size:11px}
+ .controls{max-width:170px;gap:0 13px}
+ .text-button{font-size:12px;min-height:39px;padding:7px 0}
+ .details{margin-top:0}
+ .serie strong{font-size:17px}
+ .artist{font-size:15px}
+}
+@media(max-height:600px) and (min-width:701px){
+ .page{padding-top:14px;padding-bottom:12px;grid-template-rows:auto minmax(200px,1fr) auto}
+ .art-stage{height:calc(100svh - 190px);min-height:200px}
+}
+@media(prefers-reduced-motion:reduce){
+ .letter{will-change:auto}
+ body[data-engine=fire] .art-stage,body[data-engine=fire] .letter{transition:none}
+}
