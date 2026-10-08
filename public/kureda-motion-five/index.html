@@ -1,29 +1,95 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="暮田真名｜文字だけで動く川柳・5つの試作"><title>暮田真名｜ことばの動き 5つの試作</title><style>
-:root{font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;color:#183b87;background:#fbfaf8}*{box-sizing:border-box}body{margin:0}button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}header,main,footer{max-width:980px;margin:auto;padding:18px}header{display:flex;justify-content:space-between;gap:12px;align-items:center}header strong{font-size:clamp(16px,3vw,23px);font-weight:500}button,.btn{border:1px solid #cbd1df;border-radius:30px;background:#fff;color:#163e91;padding:10px 15px;display:inline-block}#home h1{font-weight:500;letter-spacing:.06em;font-size:clamp(28px,5vw,48px);margin:42px 0 6px}#home>p{color:#687083;line-height:1.9}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:14px;margin:36px 0}.card{border:1px solid #e3e5ed;background:#fff;border-radius:17px;padding:25px;min-height:200px;display:flex;flex-direction:column;justify-content:space-between}.card small{color:#7a8596}.card h2{font-weight:500;font-size:19px;line-height:1.75}.card span{font-size:14px}.card:hover{border-color:#1c52bb}.work{display:none}.work.active{display:block}.work h2{font-size:clamp(15px,2.4vw,20px);font-weight:500;margin:10px 0 16px}.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 16px}.stage{height:min(73vh,740px);min-height:420px;border:1px solid #e3e5ed;border-radius:18px;background:#fff;position:relative;overflow:hidden;display:grid;place-items:center;padding:24px}.line{font-size:clamp(23px,4.1vw,48px);line-height:1.8;max-width:850px;text-align:center;letter-spacing:.03em}.line .ch{display:inline-block;transform-origin:center 75%}.caption{font-size:12px;position:absolute;bottom:16px;left:17px;color:#778099}.night .stage{background:#07183f;color:#fff}.night .caption{color:#aebddd}.note{margin:18px 0;font-size:13px;line-height:1.8;color:#6e7890}footer{font-size:12px;color:#7b8495;line-height:1.7;padding-bottom:38px}
-#work1 .ch{animation:joint 4.5s ease-in-out infinite;animation-delay:calc(var(--i)*-.12s)}@keyframes joint{0%,100%{transform:rotate(0) skewX(0)}40%{transform:rotate(-7deg) skewX(-4deg) translateY(-3px)}70%{transform:rotate(6deg) skewX(4deg) translateY(2px)}}
-#work2 .line{animation:coil 9s ease-in-out infinite;transform-origin:center} @keyframes coil{0%,100%{transform:rotate(0) scale(1);letter-spacing:.03em;border-radius:0}48%{transform:rotate(8deg) scale(.85);letter-spacing:-.10em}65%{transform:rotate(-8deg) scale(.92);letter-spacing:-.04em}}
-#work3 .line{display:flex;flex-direction:column;align-items:center;gap:34px}.question{font-size:.65em;align-self:flex-end;animation:question 7s infinite ease-in-out}@keyframes question{0%,24%,100%{opacity:0;transform:translateY(16px)}42%,76%{opacity:1;transform:translateY(0)}}.statement{animation:breath 7s ease-in-out infinite}@keyframes breath{50%{letter-spacing:.15em;transform:translateX(-6px)}}
-#work4 .stage{background:#fefefe} .stream{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden}.stream .line{width:85%;animation:wave 11s ease-in-out infinite}.stream .line span{display:inline-block;animation:up 5s ease-in-out infinite;animation-delay:calc(var(--i)*-.3s)}@keyframes up{50%{transform:translateY(-26px) rotate(7deg)}}@keyframes wave{0%,100%{transform:translateX(0)}50%{transform:translateX(-5%)}}
-#work5 .stage{background:#0c1c4c;color:white}.stars .line{position:relative;animation:space 18s ease-in-out infinite}.stars .line span{display:inline-block;animation:star 9s ease-in-out infinite;animation-delay:calc(var(--i)*-1s)}@keyframes star{50%{transform:translate(calc((var(--i) - 8)*3px),calc((var(--i) - 6)*-3px));opacity:.6}}@keyframes space{50%{letter-spacing:.28em;transform:scale(.96)}}
-.paused .stage *, .paused .stage{animation-play-state:paused!important}.straight .stage *{animation:none!important;transform:none!important;opacity:1!important;letter-spacing:normal!important}
-@media(prefers-reduced-motion:reduce){.stage *{animation:none!important;opacity:1!important}}
-</style></head><body><header><a href="#home"><strong>暮田真名｜ことばの動き</strong></a><button id="share">共有する</button></header><main><section id="home"><h1>文字だけで、動く。</h1><p>句の言葉は変えずに、文字の揺らぎ、距離、余白で表現する。<br>作者に見せるための、5つの非公式試作です。</p><div class="cards">
-<a class="card" href="#work1"><small>01 / 関節</small><h2>良い寿司は関節がよく曲がるんだ</h2><span>ゆっくり、しなやかに曲がる →</span></a>
-<a class="card" href="#work2"><small>02 / まるまる</small><h2>寿司。それは飼い慣らされたアルマジロ</h2><span>文字列が巻くように変形する →</span></a>
-<a class="card" href="#work3"><small>03 / 会話</small><h2>「寿司だから寂しくないよ。」「本当に？」</h2><span>遅れてやってくる問い →</span></a>
-<a class="card" href="#work4"><small>04 / 反復</small><h2>「寿司だから寂しくないよ。」「本当に？」</h2><span>同じ句の別解：一文字ずつ波打つ →</span></a>
-<a class="card" href="#work5"><small>05 / 距離</small><h2>寿司。それは飼い慣らされたアルマジロ</h2><span>同じ句の別解：文字が遠ざかる →</span></a>
-</div></section>
-<section class="work" id="work1"><h2>01 — 関節が曲がる</h2><div class="toolbar"><button class="pause">停止</button><button class="straighten">まっすぐ読む</button></div><div class="stage"><div class="line" data-chars="良い寿司は関節がよく曲がるんだ"></div><div class="caption">文字の関節 / typography only</div></div></section>
-<section class="work" id="work2"><h2>02 — 飼い慣らされたアルマジロ</h2><div class="toolbar"><button class="pause">停止</button><button class="straighten">まっすぐ読む</button></div><div class="stage"><div class="line">寿司。それは飼い慣らされたアルマジロ</div><div class="caption">まるまる文字 / typography only</div></div></section>
-<section class="work" id="work3"><h2>03 — 「本当に？」</h2><div class="toolbar"><button class="pause">停止</button><button class="straighten">まっすぐ読む</button></div><div class="stage"><div class="line"><span class="statement">「寿司だから寂しくないよ。」</span><span class="question">「本当に？」</span></div><div class="caption">余白と間 / typography only</div></div></section>
-<section class="work" id="work4"><h2>04 — 同じ句、別の動き</h2><div class="toolbar"><button class="pause">停止</button><button class="straighten">まっすぐ読む</button></div><div class="stage"><div class="stream"><div class="line" data-chars="「寿司だから寂しくないよ。」「本当に？」"></div></div><div class="caption">言葉の波 / typography only</div></div></section>
-<section class="work stars" id="work5"><h2>05 — 距離が広がる</h2><div class="toolbar"><button class="pause">停止</button><button class="straighten">まっすぐ読む</button></div><div class="stage"><div class="line" data-chars="寿司。それは飼い慣らされたアルマジロ"></div><div class="caption">文字間の距離 / typography only</div></div></section>
-<p class="note">公開インタビューで紹介された3句を使い、計5種類の演出を比較しています。新しい句を捏造せず、句そのものを使いました。既存の限定共有サイトとは独立した試作です。</p></main><footer>非公式試作 / 暮田真名さん確認用　出典：<a href="https://niewmedia.com/specials/grandmarquee51694/">NiEW インタビュー</a></footer>
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f9f7"><meta name="robots" content="noindex,nofollow">
+<meta name="description" content="暮田真名の代表的な五句を、絵を使わず文字だけの動きで読む。作者確認用の非公式デザイン試作。">
+<title>暮田真名｜ことばの動き — 五つの試作</title>
+<style>
+:root{--paper:#f8f9f7;--ink:#262b9f;--black:#252729;--sub:#64686e;--rule:#d3d5d5;--mincho:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif;--ui:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}
+*{box-sizing:border-box}html{background:var(--paper)}body{margin:0;color:var(--black);background:var(--paper);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}a,button{-webkit-tap-highlight-color:transparent}:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
+.wrap{width:min(1050px,calc(100% - 48px));margin:auto}
+header{padding:35px 0 0;display:flex;align-items:start;justify-content:space-between;gap:20px;font-family:var(--ui)}
+.signature{font-size:16px;letter-spacing:.2em;font-weight:500}.roman{font:11px/2 Georgia,serif;letter-spacing:.16em;color:var(--sub)}
+.share{background:none;border:0;padding:5px 0;text-decoration:underline;text-underline-offset:7px;text-decoration-color:var(--rule);font-size:13px}
+.hero{margin:clamp(66px,11vh,138px) 0 54px}
+.kicker{font:12px Georgia,serif;letter-spacing:.2em;color:var(--ink)}
+h1{font:500 clamp(35px,5.2vw,73px)/1.42 var(--mincho);letter-spacing:.08em;margin:19px 0 18px;color:var(--ink)}
+.hero p{max-width:490px;font:14px/2.15 var(--ui);letter-spacing:.035em;color:var(--sub)}
+.works{border-top:1px solid var(--rule);display:grid;grid-template-columns:1fr 1fr}
+.art-card{min-height:290px;padding:18px 26px 24px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;transition:background-color .2s}
+.art-card:nth-child(odd){border-right:1px solid var(--rule)}
+.art-card:first-child{min-height:348px}
+.art-card:hover{background:#f1f3f1}
+.num{font:normal 18px Georgia,serif;color:var(--ink)}
+.label{font:12px/1.75 var(--ui);letter-spacing:.1em;color:var(--sub)}
+.card-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.illustration{flex:1;display:flex;align-items:center;justify-content:center;margin:10px 0 9px;height:115px;max-height:160px;font:500 34px/1.6 var(--mincho);color:var(--ink);overflow:hidden}
+.illustration span{display:inline-block}
+.p1 span{animation:hinge 9s ease-in-out infinite;transform-origin:center 80%}
+.p1 span:nth-child(2){animation-delay:-.7s}
+.p1 span:nth-child(3){animation-delay:-1.6s}
+@keyframes hinge{0%,20%,82%,100%{transform:rotate(0)}45%{transform:rotate(23deg)}60%{transform:rotate(-9deg)}}
+.p2 span{animation:pleat 9s ease-in-out infinite;animation-delay:calc(var(--i)*-.38s)}
+@keyframes pleat{0%,22%,85%,100%{transform:translateY(0) rotate(0)}51%{transform:translateY(calc((var(--i) - 2)*10px)) rotate(calc((var(--i) - 2)*10deg))}}
+.p3{font-size:30px}
+.p3 span{animation:approach 11s ease-in-out infinite}
+.p3 span:nth-child(2){animation-delay:-1.2s}
+.p3 span:nth-child(3){animation-delay:-2.4s}
+@keyframes approach{0%,23%,89%,100%{transform:scale(1) translateY(0)}52%{transform:scale(1.55) translateY(-9px)}}
+.p4{font-size:25px}
+.p4 .orbit{height:120px;width:120px;display:grid;place-items:center;position:relative;animation:orbit 14s cubic-bezier(.5,.15,.3,.95) infinite}
+.p4 .orbit span{position:absolute;top:50%;left:50%;transform-origin:0 0;font-size:25px}
+.p4 .orbit span:nth-child(1){transform:rotate(0deg) translate(48px,-15px) rotate(0deg)}
+.p4 .orbit span:nth-child(2){transform:rotate(72deg) translate(48px,-15px) rotate(-72deg)}
+.p4 .orbit span:nth-child(3){transform:rotate(144deg) translate(48px,-15px) rotate(-144deg)}
+.p4 .orbit span:nth-child(4){transform:rotate(216deg) translate(48px,-15px) rotate(-216deg)}
+.p4 .orbit span:nth-child(5){transform:rotate(288deg) translate(48px,-15px) rotate(-288deg)}
+@keyframes orbit{0%,12%,100%{transform:scale(.05) rotate(0)}35%,65%{transform:scale(1) rotate(80deg)}85%{transform:scale(.3) rotate(120deg)}}
+.p5{font-size:40px}
+.p5 span{animation:afterglow 10s ease-in-out infinite}
+.p5 span:nth-child(2){animation-delay:-.5s}
+@keyframes afterglow{0%,30%,90%,100%{text-shadow:none;color:var(--ink)}53%{text-shadow:6px 0 #af4d36,-7px 0 #9db0dc;color:#fff}62%{text-shadow:15px 0 rgba(167,62,35,.3),-9px 0 rgba(38,43,159,.3);color:var(--ink)}}
+.card-bottom h2{font:500 clamp(15px,1.85vw,20px)/1.85 var(--mincho);color:var(--black);letter-spacing:.02em;margin:0 0 7px}
+.card-bottom .hint{display:flex;justify-content:space-between;gap:15px;color:var(--sub);font:12px/1.9 var(--ui)}
+.hint b{font:normal 15px Georgia,serif;color:var(--ink)}
+.meta{font:12px/2 var(--ui);color:var(--sub);margin:26px 0 45px;max-width:780px}
+.meta a{text-decoration:underline;text-underline-offset:3px}
+footer{padding:18px 0 34px;border-top:1px solid var(--rule);display:flex;gap:15px;flex-wrap:wrap;justify-content:space-between;color:var(--sub);font:12px/1.8 var(--ui)}
+@media(max-width:680px){
+ .wrap{width:calc(100% - 38px)}
+ header{padding-top:24px}
+ .signature{font-size:15px}.hero{margin:77px 0 45px}
+ h1{font-size:clamp(33px,8.5vw,54px)}
+ .works{grid-template-columns:1fr}
+ .art-card,.art-card:first-child{min-height:283px;padding:17px 8px 20px}
+ .art-card:nth-child(odd){border-right:0}
+ .illustration{max-height:155px}
+ .meta{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){.illustration *{animation:none!important;transform:none!important}}
+</style></head><body>
+<header class="wrap"><div><div class="signature">暮田真名</div><div class="roman" aria-hidden="true">MANA KUREDA</div></div><button class="share" id="share" type="button">この入口を共有する</button></header>
+<main class="wrap">
+<section class="hero">
+<div class="kicker">FIVE MOTION STUDIES / 2026</div>
+<h1>句は、そのまま。<br>文字だけが、動く。</h1>
+<p>読める状態から、別のかたちへ。そしてまた、読める状態へ。<br>絵や映像を加えず、句の文字だけでつくる五つの小さな試作。</p>
+</section>
+<section class="works" aria-label="5つの試作">
+<a class="art-card" href="../kureda-one-line/"><div class="card-top"><span class="num">01</span><span class="label">JOINTS · ORIGINAL</span></div><div class="illustration p1" aria-hidden="true"><span>曲</span><span>が</span><span>る</span></div><div class="card-bottom"><h2>良い寿司は関節がよく曲がるんだ</h2><div class="hint"><span>前回の作品を、改変せずそのまま展示。</span><b>↗</b></div></div></a>
+<a class="art-card" href="v2/02-frill.html"><div class="card-top"><span class="num">02</span><span class="label">PLEATS</span></div><div class="illustration p2" aria-hidden="true"><span style="--i:0">フ</span><span style="--i:1">リ</span><span style="--i:2">ル</span><span style="--i:3">が</span><span style="--i:4">あ</span></div><div class="card-bottom"><h2>いけにえにフリルがあって恥ずかしい</h2><div class="hint"><span>文字列が折り目を持つ。</span><b>↗</b></div></div></a>
+<a class="art-card" href="v2/03-road.html"><div class="card-top"><span class="num">03</span><span class="label">APPROACH</span></div><div class="illustration p3" aria-hidden="true"><span>犬</span><span>が</span><span>くる</span></div><div class="card-bottom"><h2>県道のかたちになった犬がくる</h2><div class="hint"><span>行が道になり、言葉が近づく。</span><b>↗</b></div></div></a>
+<a class="art-card" href="v2/04-wheel.html"><div class="card-top"><span class="num">04</span><span class="label">ASSEMBLY / COLLAPSE</span></div><div class="illustration p4" aria-hidden="true"><div class="orbit"><span>観</span><span>覧</span><span>車</span><span>を</span><span>建</span></div></div><div class="card-bottom"><h2>観覧車を建てては崩すあたたかさ</h2><div class="hint"><span>組み立て、回転、崩壊、再建。</span><b>↗</b></div></div></a>
+<a class="art-card" href="v2/05-future.html"><div class="card-top"><span class="num">05</span><span class="label">AFTERIMAGE</span></div><div class="illustration p5" aria-hidden="true"><span>未</span><span>来</span></div><div class="card-bottom"><h2>未来はきっと火がついたプリクラ</h2><div class="hint"><span>文字だけが感光し、残像を残す。</span><b>↗</b></div></div></a>
+</section>
+<p class="meta">五句は『ふりょの星』（左右社）から。<a href="https://prtimes.jp/main/html/rd/p/000000067.000052594.html" target="_blank" rel="noopener noreferrer">出版社の紹介文</a>で原文を確認しました。動きは独自のデザイン試作であり、句の解釈の正解を示すものではありません。作品01は以前好評だった元のページに直接つながります。</p>
+</main>
+<footer class="wrap"><span>非公式試作 / 作者確認用</span><span>川柳：暮田真名　｜　文字と余白だけの実験</span></footer>
 <script>
-document.querySelectorAll('[data-chars]').forEach(el=>{const s=el.dataset.chars;el.setAttribute('aria-label',s);el.innerHTML=Array.from(s).map((c,i)=>'<span class="ch" aria-hidden="true" style="--i:'+i+'">'+c+'</span>').join('')});
-function render(){const key=location.hash.slice(1);document.getElementById('home').style.display=key.startsWith('work')?'none':'block';document.querySelectorAll('.work').forEach(w=>w.classList.toggle('active',w.id===key));window.scrollTo(0,0)}addEventListener('hashchange',render);render();
-document.querySelectorAll('.pause').forEach(b=>b.onclick=()=>{const w=b.closest('.work');w.classList.toggle('paused');b.textContent=w.classList.contains('paused')?'再開':'停止'});
-document.querySelectorAll('.straighten').forEach(b=>b.onclick=()=>{const w=b.closest('.work');w.classList.toggle('straight');b.textContent=w.classList.contains('straight')?'動きを戻す':'まっすぐ読む'});
-document.getElementById('share').onclick=async()=>{try{if(navigator.share)await navigator.share({title:document.title,url:location.href});else{await navigator.clipboard.writeText(location.href);alert('URLをコピーしました')}}catch(e){}};
-</script></body></html>
+document.getElementById('share').addEventListener('click',async(e)=>{
+ const b=e.currentTarget;
+ try{if(navigator.share){await navigator.share({title:document.title,url:location.href})}
+ else if(navigator.clipboard){await navigator.clipboard.writeText(location.href);b.textContent='URLをコピーしました';setTimeout(()=>b.textContent='この入口を共有する',1800)}}
+ catch(_){}});
+</script>
+</body></html>
