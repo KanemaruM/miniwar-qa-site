@@ -1,95 +1,18 @@
-<!doctype html>
-<html lang="ja"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f8f9f7"><meta name="robots" content="noindex,nofollow">
-<meta name="description" content="暮田真名の代表的な五句を、絵を使わず文字だけの動きで読む。作者確認用の非公式デザイン試作。">
-<title>暮田真名｜ことばの動き — 五つの試作</title>
-<style>
-:root{--paper:#f8f9f7;--ink:#262b9f;--black:#252729;--sub:#64686e;--rule:#d3d5d5;--mincho:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif;--ui:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}
-*{box-sizing:border-box}html{background:var(--paper)}body{margin:0;color:var(--black);background:var(--paper);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}a,button{-webkit-tap-highlight-color:transparent}:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
-.wrap{width:min(1050px,calc(100% - 48px));margin:auto}
-header{padding:35px 0 0;display:flex;align-items:start;justify-content:space-between;gap:20px;font-family:var(--ui)}
-.signature{font-size:16px;letter-spacing:.2em;font-weight:500}.roman{font:11px/2 Georgia,serif;letter-spacing:.16em;color:var(--sub)}
-.share{background:none;border:0;padding:5px 0;text-decoration:underline;text-underline-offset:7px;text-decoration-color:var(--rule);font-size:13px}
-.hero{margin:clamp(66px,11vh,138px) 0 54px}
-.kicker{font:12px Georgia,serif;letter-spacing:.2em;color:var(--ink)}
-h1{font:500 clamp(35px,5.2vw,73px)/1.42 var(--mincho);letter-spacing:.08em;margin:19px 0 18px;color:var(--ink)}
-.hero p{max-width:490px;font:14px/2.15 var(--ui);letter-spacing:.035em;color:var(--sub)}
-.works{border-top:1px solid var(--rule);display:grid;grid-template-columns:1fr 1fr}
-.art-card{min-height:290px;padding:18px 26px 24px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;transition:background-color .2s}
-.art-card:nth-child(odd){border-right:1px solid var(--rule)}
-.art-card:first-child{min-height:348px}
-.art-card:hover{background:#f1f3f1}
-.num{font:normal 18px Georgia,serif;color:var(--ink)}
-.label{font:12px/1.75 var(--ui);letter-spacing:.1em;color:var(--sub)}
-.card-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-.illustration{flex:1;display:flex;align-items:center;justify-content:center;margin:10px 0 9px;height:115px;max-height:160px;font:500 34px/1.6 var(--mincho);color:var(--ink);overflow:hidden}
-.illustration span{display:inline-block}
-.p1 span{animation:hinge 9s ease-in-out infinite;transform-origin:center 80%}
-.p1 span:nth-child(2){animation-delay:-.7s}
-.p1 span:nth-child(3){animation-delay:-1.6s}
-@keyframes hinge{0%,20%,82%,100%{transform:rotate(0)}45%{transform:rotate(23deg)}60%{transform:rotate(-9deg)}}
-.p2 span{animation:pleat 9s ease-in-out infinite;animation-delay:calc(var(--i)*-.38s)}
-@keyframes pleat{0%,22%,85%,100%{transform:translateY(0) rotate(0)}51%{transform:translateY(calc((var(--i) - 2)*10px)) rotate(calc((var(--i) - 2)*10deg))}}
-.p3{font-size:30px}
-.p3 span{animation:approach 11s ease-in-out infinite}
-.p3 span:nth-child(2){animation-delay:-1.2s}
-.p3 span:nth-child(3){animation-delay:-2.4s}
-@keyframes approach{0%,23%,89%,100%{transform:scale(1) translateY(0)}52%{transform:scale(1.55) translateY(-9px)}}
-.p4{font-size:25px}
-.p4 .orbit{height:120px;width:120px;display:grid;place-items:center;position:relative;animation:orbit 14s cubic-bezier(.5,.15,.3,.95) infinite}
-.p4 .orbit span{position:absolute;top:50%;left:50%;transform-origin:0 0;font-size:25px}
-.p4 .orbit span:nth-child(1){transform:rotate(0deg) translate(48px,-15px) rotate(0deg)}
-.p4 .orbit span:nth-child(2){transform:rotate(72deg) translate(48px,-15px) rotate(-72deg)}
-.p4 .orbit span:nth-child(3){transform:rotate(144deg) translate(48px,-15px) rotate(-144deg)}
-.p4 .orbit span:nth-child(4){transform:rotate(216deg) translate(48px,-15px) rotate(-216deg)}
-.p4 .orbit span:nth-child(5){transform:rotate(288deg) translate(48px,-15px) rotate(-288deg)}
-@keyframes orbit{0%,12%,100%{transform:scale(.05) rotate(0)}35%,65%{transform:scale(1) rotate(80deg)}85%{transform:scale(.3) rotate(120deg)}}
-.p5{font-size:40px}
-.p5 span{animation:afterglow 10s ease-in-out infinite}
-.p5 span:nth-child(2){animation-delay:-.5s}
-@keyframes afterglow{0%,30%,90%,100%{text-shadow:none;color:var(--ink)}53%{text-shadow:6px 0 #af4d36,-7px 0 #9db0dc;color:#fff}62%{text-shadow:15px 0 rgba(167,62,35,.3),-9px 0 rgba(38,43,159,.3);color:var(--ink)}}
-.card-bottom h2{font:500 clamp(15px,1.85vw,20px)/1.85 var(--mincho);color:var(--black);letter-spacing:.02em;margin:0 0 7px}
-.card-bottom .hint{display:flex;justify-content:space-between;gap:15px;color:var(--sub);font:12px/1.9 var(--ui)}
-.hint b{font:normal 15px Georgia,serif;color:var(--ink)}
-.meta{font:12px/2 var(--ui);color:var(--sub);margin:26px 0 45px;max-width:780px}
-.meta a{text-decoration:underline;text-underline-offset:3px}
-footer{padding:18px 0 34px;border-top:1px solid var(--rule);display:flex;gap:15px;flex-wrap:wrap;justify-content:space-between;color:var(--sub);font:12px/1.8 var(--ui)}
-@media(max-width:680px){
- .wrap{width:calc(100% - 38px)}
- header{padding-top:24px}
- .signature{font-size:15px}.hero{margin:77px 0 45px}
- h1{font-size:clamp(33px,8.5vw,54px)}
- .works{grid-template-columns:1fr}
- .art-card,.art-card:first-child{min-height:283px;padding:17px 8px 20px}
- .art-card:nth-child(odd){border-right:0}
- .illustration{max-height:155px}
- .meta{font-size:12px}
-}
-@media(prefers-reduced-motion:reduce){.illustration *{animation:none!important;transform:none!important}}
-</style></head><body>
-<header class="wrap"><div><div class="signature">暮田真名</div><div class="roman" aria-hidden="true">MANA KUREDA</div></div><button class="share" id="share" type="button">この入口を共有する</button></header>
-<main class="wrap">
-<section class="hero">
-<div class="kicker">FIVE MOTION STUDIES / 2026</div>
-<h1>句は、そのまま。<br>文字だけが、動く。</h1>
-<p>読める状態から、別のかたちへ。そしてまた、読める状態へ。<br>絵や映像を加えず、句の文字だけでつくる五つの小さな試作。</p>
+<!doctype html><html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#090e20">
+<meta name="robots" content="noindex,nofollow"><meta name="description" content="暮田真名の川柳5句を、文字だけの短い映画として表現する非公式試作。">
+<title>暮田真名｜文字は、映画になる。5つのキネティック・ポエトリー</title>
+<link rel="stylesheet" href="portal.css"></head><body>
+<header class="masthead"><a href="#top"><div class="brand">暮田真名</div><small>MANA KUREDA</small></a><div class="edition">KINETIC POETRY<br>FIVE CINEMATIC STUDIES / 2026</div></header>
+<main>
+<section class="hero" id="top"><div class="hero-bg"></div><div class="hero-dots" aria-hidden="true"><span class="big-type">曲</span><span class="big-type">観</span><span class="big-type">未</span></div><div class="hero-body"><div class="hero-label">WORDS IN MOTION / AN EXHIBITION</div><h1 class="hero-title">文字は、<br><em>映画になる。</em></h1><p class="hero-desc">一句を、削らない。イラストも写真も使わない。<br>文字の光・奥行き・重力・時間だけでつくる、五本の小さな映画。</p><div class="hero-below"><a class="hero-cta" href="#works">5作品を鑑賞する　↘</a><span>約30秒 × 5篇</span></div></div></section>
+<section class="showcase" id="works"><div class="eyebrow">THE PROGRAMME / 01 — 05</div><h2 class="showcase-heading">五つの句、五つの運動。</h2><p class="showcase-intro">それぞれの句が持っている奇妙さを、別々の動きの法則として設計しました。どの作品も、静止した原文から始まり、大きく形を変え、また読める姿へ戻ります。各作品の下には表現の意図と技術の説明があります。</p>
+<div class="work-card"><div class="number">01</div><div class="work-content"><div class="category">JOINTS — 連動する関節</div><h3>関節が、つながる。</h3><p class="poem">良い寿司は関節がよく曲がるんだ</p><p class="description">文字が一本の骨格になり、次々と折れ曲がり、奥行きのなかで連動する。初代の良さを残しつつ別の撮り方を試す。</p><a class="watch-link" href="cinema/01.html">01を鑑賞する ↗</a></div><a class="preview preview-joint" style="--light:#1b2b85;--color:#b9c6ff;--aura:#708cff" href="cinema/01.html" aria-label="関節の試作を見る"><div class="preview-inner" aria-hidden="true">曲がる</div><small>00:34 / JOINTS</small></a></div>
+<div class="work-card"><div class="number">02</div><div class="work-content"><div class="category">PLEATS — 重なり合う文字</div><h3>恥ずかしいフリル。</h3><p class="poem">いけにえにフリルがあって恥ずかしい</p><p class="description">文字列が、何層にも折り畳まれて立体のフリルになる。重なるたびに近くなり、見られているように広がる。</p><a class="watch-link" href="cinema/02.html">02を鑑賞する ↗</a></div><a class="preview preview-frill" style="--light:#552039;--color:#ffd0dd;--aura:#fc7692" href="cinema/02.html" aria-label="フリルの試作を見る"><div class="preview-inner" aria-hidden="true">フリル</div><small>00:32 / PLEATS</small></a></div>
+<div class="work-card"><div class="number">03</div><div class="work-content"><div class="category">ARRIVAL — 奥へ続く文字</div><h3>犬が、くる。</h3><p class="poem">県道のかたちになった犬がくる</p><p class="description">文字が道路の曲線になり、カメラがその上を走る。遠くにいた「犬」が急速にこちらへ来る。</p><a class="watch-link" href="cinema/03.html">03を鑑賞する ↗</a></div><a class="preview preview-road" style="--light:#18504a;--color:#b8fff0;--aura:#34e6ca" href="cinema/03.html" aria-label="犬の試作を見る"><div class="preview-inner" aria-hidden="true">犬がくる</div><small>00:31 / ARRIVAL</small></a></div>
+<div class="work-card"><div class="number">04</div><div class="work-content"><div class="category">RECONSTRUCTION — 建造と崩壊</div><h3>建てては、崩す。</h3><p class="poem">観覧車を建てては崩すあたたかさ</p><p class="description">文字で円環をつくり、ゆっくりと回転させ、重力でばらばらにする。崩壊したものが再び組み上がる。</p><a class="watch-link" href="cinema/04.html">04を鑑賞する ↗</a></div><a class="preview preview-wheel" style="--light:#4b2b3d;--color:#ffe4b7;--aura:#ffab66" href="cinema/04.html" aria-label="観覧車の試作を見る"><div class="preview-inner" aria-hidden="true">観覧車</div><small>00:35 / RECONSTRUCTION</small></a></div>
+<div class="work-card"><div class="number">05</div><div class="work-content"><div class="category">EXPOSURE — 光と残像</div><h3>未来を、感光させる。</h3><p class="poem">未来はきっと火がついたプリクラ</p><p class="description">光で文字を露光させる。像が色ごとに分かれ、強い閃光で焼きつき、消えない残像だけが残る。</p><a class="watch-link" href="cinema/05.html">05を鑑賞する ↗</a></div><a class="preview preview-future" style="--light:#48225b;--color:#d9c5ff;--aura:#d48de2" href="cinema/05.html" aria-label="未来の試作を見る"><div class="preview-inner" aria-hidden="true">未来</div><small>00:32 / EXPOSURE</small></a></div>
 </section>
-<section class="works" aria-label="5つの試作">
-<a class="art-card" href="../kureda-one-line/"><div class="card-top"><span class="num">01</span><span class="label">JOINTS · ORIGINAL</span></div><div class="illustration p1" aria-hidden="true"><span>曲</span><span>が</span><span>る</span></div><div class="card-bottom"><h2>良い寿司は関節がよく曲がるんだ</h2><div class="hint"><span>前回の作品を、改変せずそのまま展示。</span><b>↗</b></div></div></a>
-<a class="art-card" href="v2/02-frill.html"><div class="card-top"><span class="num">02</span><span class="label">PLEATS</span></div><div class="illustration p2" aria-hidden="true"><span style="--i:0">フ</span><span style="--i:1">リ</span><span style="--i:2">ル</span><span style="--i:3">が</span><span style="--i:4">あ</span></div><div class="card-bottom"><h2>いけにえにフリルがあって恥ずかしい</h2><div class="hint"><span>文字列が折り目を持つ。</span><b>↗</b></div></div></a>
-<a class="art-card" href="v2/03-road.html"><div class="card-top"><span class="num">03</span><span class="label">APPROACH</span></div><div class="illustration p3" aria-hidden="true"><span>犬</span><span>が</span><span>くる</span></div><div class="card-bottom"><h2>県道のかたちになった犬がくる</h2><div class="hint"><span>行が道になり、言葉が近づく。</span><b>↗</b></div></div></a>
-<a class="art-card" href="v2/04-wheel.html"><div class="card-top"><span class="num">04</span><span class="label">ASSEMBLY / COLLAPSE</span></div><div class="illustration p4" aria-hidden="true"><div class="orbit"><span>観</span><span>覧</span><span>車</span><span>を</span><span>建</span></div></div><div class="card-bottom"><h2>観覧車を建てては崩すあたたかさ</h2><div class="hint"><span>組み立て、回転、崩壊、再建。</span><b>↗</b></div></div></a>
-<a class="art-card" href="v2/05-future.html"><div class="card-top"><span class="num">05</span><span class="label">AFTERIMAGE</span></div><div class="illustration p5" aria-hidden="true"><span>未</span><span>来</span></div><div class="card-bottom"><h2>未来はきっと火がついたプリクラ</h2><div class="hint"><span>文字だけが感光し、残像を残す。</span><b>↗</b></div></div></a>
-</section>
-<p class="meta">五句は『ふりょの星』（左右社）から。<a href="https://prtimes.jp/main/html/rd/p/000000067.000052594.html" target="_blank" rel="noopener noreferrer">出版社の紹介文</a>で原文を確認しました。動きは独自のデザイン試作であり、句の解釈の正解を示すものではありません。作品01は以前好評だった元のページに直接つながります。</p>
-</main>
-<footer class="wrap"><span>非公式試作 / 作者確認用</span><span>川柳：暮田真名　｜　文字と余白だけの実験</span></footer>
-<script>
-document.getElementById('share').addEventListener('click',async(e)=>{
- const b=e.currentTarget;
- try{if(navigator.share){await navigator.share({title:document.title,url:location.href})}
- else if(navigator.clipboard){await navigator.clipboard.writeText(location.href);b.textContent='URLをコピーしました';setTimeout(()=>b.textContent='この入口を共有する',1800)}}
- catch(_){}});
-</script>
-</body></html>
+<section class="manifesto"><div><div class="eyebrow">ARTIST'S WORDS FIRST</div><h2>絵を描かずに、<br>映画をつくる。</h2></div><div><p>今回使っているのは、原文の文字と、ブラウザがリアルタイムで計算する光・奥行き・残像だけ。生成したイラスト・写真・映像は一切使っていません。原句そのものを主役にするための表現実験です。</p><p>特定の解釈を映像で正解にするのではなく、言葉をいったん別のかたちにして、再びまっすぐ読める状態に戻す。その往復自体を作品にします。各作品には制作側の演出ノートを付けていますが、作者の意図を断定するものではありません。</p><p>前回高く評価してもらった <a class="old" href="https://kanemarum.github.io/miniwar-qa-site/kureda-one-line/">初代「良い寿司は関節がよく曲がるんだ」</a> はそのまま保存しています。今回の01はそこから発展させる別案です。</p></div></section>
+</main><footer class="footer"><span>暮田真名｜ことばの動き / 第3試作　非公式・作者確認用</span><span>句出典：『ふりょの星』（左右社）｜生成画像・映像素材なし</span></footer>
+<script type="module" src="portal.js"></script></body></html>
