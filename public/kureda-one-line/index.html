@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f8f9f7">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="暮田真名の一句「良い寿司は関節がよく曲がるんだ」を、文字と余白で読む小さな試作。">
+<title>良い寿司は関節がよく曲がるんだ — 暮田真名</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f8f9f7'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-family='serif' font-size='44' fill='%23262b9f'%3E曲%3C/text%3E%3C/svg%3E">
+<style>
+:root{color-scheme:light;--paper:#f8f9f7;--ink:#262b9f;--text:#26282a;--quiet:#62656a;--edge:#c9ccca;--font:serif}
+*{box-sizing:border-box}html{margin:0;background:var(--paper)}body{margin:0;color:var(--text);font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;color:inherit}button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--ink);outline-offset:6px}button{cursor:pointer}a{color:inherit;text-decoration-thickness:1px;text-underline-offset:4px}button:hover,a:hover,summary:hover{color:var(--ink)}
+.page{min-height:100svh;display:grid;grid-template-rows:auto minmax(380px,1fr) auto;padding:36px 48px 24px;gap:0;position:relative}
+.masthead{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;z-index:2}.name{margin:0;font-size:17px;font-weight:500;letter-spacing:.22em;line-height:1.6}.roman{font-family:Arial,sans-serif;font-size:12px;letter-spacing:.18em;line-height:1.5;margin:5px 0 0;color:var(--quiet)}.edition{font-size:12px;letter-spacing:.13em;color:var(--quiet);margin:7px 0 0}.edition .serial{font-family:Georgia,serif;font-size:17px;letter-spacing:0;margin-left:15px;color:var(--ink)}
+.stage{position:relative;min-width:0;min-height:380px;height:calc(100svh - 211px);display:grid;place-items:center;margin:0;isolation:isolate}
+.poem{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif;font-size:clamp(23px,3.3vw,54px);font-weight:500;letter-spacing:.14em;color:var(--ink);margin:0;text-align:center;line-height:2;white-space:nowrap}
+.glyphs{position:absolute;inset:0;pointer-events:none;visibility:hidden}.glyph{position:absolute;left:0;top:0;color:var(--ink);font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif;font-weight:500;line-height:1;width:1em;height:1em;text-align:center;will-change:transform;transform-origin:50% 50%}.js .glyphs{visibility:visible}.js .poem{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.footer{z-index:3;display:grid;grid-template-columns:1fr auto;gap:26px;align-items:end}.colophon{font-size:12px;line-height:1.9;color:var(--quiet);letter-spacing:.02em}.colophon p{margin:0}.work{font-size:13px;letter-spacing:.1em;color:var(--text)}.book{font-size:12px;margin-top:3px!important}.controls{display:flex;gap:24px;align-items:center}.text-button{border:0;background:none;padding:12px 0;min-height:44px;font-size:14px;line-height:1.6;letter-spacing:.06em;text-decoration:underline;text-decoration-color:var(--edge);text-underline-offset:8px}.text-button[aria-pressed="true"]{color:var(--ink);text-decoration-color:var(--ink)}
+.source{grid-column:1/-1;font-size:12px;color:var(--quiet);line-height:1.8}.source summary{cursor:pointer;list-style:none;width:fit-content;min-height:32px;display:flex;align-items:center;gap:8px}.source summary::-webkit-details-marker{display:none}.source summary::after{content:'＋';font-size:14px}.source[open] summary::after{content:'−'}.source-copy{max-width:640px;padding:8px 0 10px}.source-copy p{margin:0 0 9px}.source-copy a{overflow-wrap:anywhere}.source-copy .provenance{font-size:12px}.source[open]{padding-top:12px;border-top:1px solid var(--edge)}
+@media(min-width:1100px){.page{padding:42px 56px 28px}.stage{height:calc(100svh - 237px)}.source{margin-top:-10px}}
+@media(max-width:640px){.page{padding:25px 24px 16px;grid-template-rows:auto minmax(360px,1fr) auto}.name{font-size:16px}.roman{font-size:12px;letter-spacing:.13em}.edition{font-size:12px;margin-top:6px}.edition .serial{font-size:16px;margin-left:10px}.stage{height:calc(100svh - 248px);min-height:360px}.poem{writing-mode:vertical-rl;font-size:25px;line-height:1;letter-spacing:.2em;white-space:normal}.footer{gap:16px 12px;grid-template-columns:1fr auto}.controls{display:flex;flex-direction:column;gap:0;align-items:flex-end}.text-button{font-size:14px;padding:9px 0;min-height:40px;line-height:1.5;text-underline-offset:6px}.colophon{line-height:1.8}.work{font-size:12px}.book{max-width:180px;font-size:12px;letter-spacing:0}.source{font-size:12px;margin-top:-7px}.source-copy{font-size:12px;line-height:1.9}.source summary{min-height:32px}}
+@media(max-height:550px) and (min-width:641px){.page{padding:18px 28px 12px;grid-template-rows:auto minmax(200px,1fr) auto}.stage{height:calc(100svh - 182px);min-height:200px}.name{font-size:14px}.roman{font-size:12px}.footer{gap:10px}.source{margin-top:-6px}}
+@media(prefers-reduced-motion:reduce){.glyph{will-change:auto}}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="masthead">
+    <div><h1 class="name">暮田真名</h1><p class="roman" aria-hidden="true">MANA KUREDA</p></div>
+    <p class="edition">一 句<span class="serial" aria-hidden="true">01</span></p>
+  </header>
+  <figure class="stage" aria-label="川柳">
+    <blockquote class="poem" cite="https://niewmedia.com/specials/grandmarquee51694/">良い寿司は関節がよく曲がるんだ</blockquote>
+    <div class="glyphs" aria-hidden="true"></div>
+  </figure>
+  <footer class="footer">
+    <div class="colophon"><p class="work">「OD寿司」より</p><p class="book">『ふりょの星』 暮田真名／左右社</p></div>
+    <div class="controls" aria-label="文字の動き">
+      <button class="text-button" id="pause" type="button" aria-pressed="false">動きをとめる</button>
+      <button class="text-button" id="rest" type="button" aria-pressed="false">まっすぐ読む</button>
+    </div>
+    <details class="source">
+      <summary>出典・この試作について</summary>
+      <div class="source-copy">
+        <p>川柳：暮田真名「良い寿司は関節がよく曲がるんだ」。<br>『ふりょの星』（左右社、2022年）「OD寿司」所収。</p>
+        <p>原文は、作者本人が作品を紹介した<a href="https://niewmedia.com/specials/grandmarquee51694/" target="_blank" rel="noopener noreferrer">NiEW掲載のJ-WAVE「GRAND MARQUEE」インタビュー</a>（2024年9月10日）で確認。<a href="https://sayusha.com/books/-/isbn9784865280838" target="_blank" rel="noopener noreferrer">句集の出版社ページ</a></p>
+        <p class="provenance">一句の文字組みと動きを試す、非公式のデザイン試作です。川柳の著作権は著者に帰属します。動きはこの試作によるもので、作者の解釈を示すものではありません。</p>
+      </div>
+    </details>
+  </footer>
+</main>
+<script>
+(()=>{
+  'use strict';
+  const poem='良い寿司は関節がよく曲がるんだ';
+  const stage=document.querySelector('.stage');
+  const layer=document.querySelector('.glyphs');
+  const pause=document.getElementById('pause');
+  const rest=document.getElementById('rest');
+  const preference=matchMedia('(prefers-reduced-motion: reduce)');
+  const letters=Array.from(poem).map(char=>{const el=document.createElement('span');el.className='glyph';el.textContent=char;layer.appendChild(el);return el;});
+  let w=0,h=0,size=0,spacing=0,vertical=true,time=0,last=0,paused=false,straight=preference.matches,raf=0;
+  // Several long rests let the original line reappear; the joints never change its words.
+  const poses=[
+    {at:0,a:[0,0,0]}, {at:3.2,a:[0,0,0]},
+    {at:7.5,a:[-.20,.44,-.23]},
+    {at:12,a:[.28,-.67,.55]},
+    {at:17,a:[-.58,.51,.18]},
+    {at:21.8,a:[.05,.12,-.46]},
+    {at:27,a:[0,0,0]}, {at:32,a:[0,0,0]}
+  ];
+  function ease(t){return t*t*(3-2*t)}
+  function angles(t){const p=t%32;let i=0;while(i<poses.length-2&&p>poses[i+1].at)i++;const x=poses[i],y=poses[i+1],mix=ease((p-x.at)/(y.at-x.at));return x.a.map((v,j)=>v+(y.a[j]-v)*mix)}
+  function render(){
+    const bend=straight?[0,0,0]:angles(time);
+    let x=0,y=0;
+    const points=letters.map((_,i)=>{
+      const group=Math.min(2,Math.floor(i/5));
+      const a=bend[group];
+      if(i){const direction=(vertical?Math.PI/2:0)+a;x+=Math.cos(direction)*spacing;y+=Math.sin(direction)*spacing;}
+      return {x,y,rotation:a*180/Math.PI*.7};
+    });
+    const minX=Math.min(...points.map(p=>p.x)),maxX=Math.max(...points.map(p=>p.x));
+    const minY=Math.min(...points.map(p=>p.y)),maxY=Math.max(...points.map(p=>p.y));
+    const cx=(minX+maxX)/2,cy=(minY+maxY)/2;
+    // Stable character sizes and generous advance prevent colliding or clipped glyphs.
+    const ox=w/2+(vertical?w*.035:0),oy=h/2-5;
+    points.forEach((p,i)=>{letters[i].style.transform=`translate3d(${ox+p.x-cx-size/2}px,${oy+p.y-cy-size/2}px,0) rotate(${p.rotation}deg)`;});
+  }
+  function measure(){w=stage.clientWidth;h=stage.clientHeight;vertical=window.innerWidth<=640;size=vertical?Math.min(35,Math.max(19,(h-40)/18.4)):Math.min(56,Math.max(20,(w-62)/18.4));spacing=size*1.19;letters.forEach(el=>el.style.fontSize=size+'px');render();}
+  function sync(){pause.textContent=paused?'動かす':'動きをとめる';pause.setAttribute('aria-pressed',String(paused));rest.textContent=straight?'動きに戻る':'まっすぐ読む';rest.setAttribute('aria-pressed',String(straight));pause.hidden=straight;}
+  function frame(now){if(last&&!document.hidden&&!paused&&!straight)time+=(now-last)/1000;last=now;if(!paused)render();raf=requestAnimationFrame(frame);}
+  pause.addEventListener('click',()=>{paused=!paused;sync();});
+  rest.addEventListener('click',()=>{straight=!straight;paused=false;if(!straight)time=3.2;sync();render();});
+  preference.addEventListener('change',e=>{straight=e.matches;paused=false;sync();render();});
+  document.addEventListener('visibilitychange',()=>{last=0;});
+  new ResizeObserver(measure).observe(stage);
+  window.addEventListener('resize',measure);
+  document.documentElement.classList.add('js');measure();sync();raf=requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
